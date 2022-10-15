@@ -10,7 +10,7 @@ export default function useAPI() {
   const getCategories = async () => {
     if (categories.value.length === 0) {
       const response = await instance.get('api_category.php')
-      return response.data.trivia_categories
+      categories.value = response.data.trivia_categories
     }
   }
 
